@@ -1,0 +1,54 @@
+{% extends "header.html" %}
+{% block content %}
+
+{% load static %}
+
+{% if image_form %}<a href="dash">Home </a> {% else %}<a href="#">Home </a> {% endif %}|   <a href="card">Make Business Card </a>  |   <a href="imagepost">Upload Post </a><br>
+    
+{% if image_form %}
+<div class="row">
+    {% if post_message %}
+<div class="col-md-6  "  >
+    {% else %}
+    <div class="col-md-12  "  >
+    {% endif %}
+
+
+    <span ><i><b >UPLOAD POST </b></i> </span><br>
+    <form action="imagepost" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="image" multiple required title="upload only 'jpej'/'png'/jpg"><br>
+        <textarea name="disc" required placeholder="enter description under 300 words"></textarea><br>
+        <input type="submit" name="sbt" value="Upload" id="title" style="margin-left: 4ch;" />
+
+    </form>
+
+
+
+</div>
+{% if post_message %}
+<div class="col-md-6  "  > 
+    <h1>{{post_message}} </h1>
+</div>
+{% endif %}
+
+
+</div>
+{% else %}
+<div class="row">
+    <div class="col-md-12"><h1 id="title"> Dashboard : Uploaded Posts</h1></div>
+        {% for item in DATA %}
+        <div class="col-md-4" style=" text-align: center;">
+        <a href="inner/{{ item.id }}"><img src= "{{ item.images.url }}" id='img_upload' class="responsive"  width="600" height="400"/>
+        </a><br>
+        {{ item.timestamp }}<br>
+        
+    </div>
+        {% endfor %}
+
+    
+</div>
+{% endif %}
+
+
+{% endblock %}

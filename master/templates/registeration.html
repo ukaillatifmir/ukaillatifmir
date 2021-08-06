@@ -1,0 +1,57 @@
+{% extends "header.html" %}
+
+
+{% block content %}
+
+
+<div style="text-align: center;"><a href="/ "> Home </a>   | <a href="login"> Signin </a> | <a href="registeration"> SignUp </a></div><br>
+<div class="row">
+    {% if message %}
+<div id="div" class=col-md-6>
+    {% else %}
+    <div id="div" class=col-md-12>
+        {% endif %}
+
+    
+    <form method="POST">
+        {% csrf_token %}
+
+    <b><span>Enter user name : </span></b><br>
+    <input type="text" name="user_name" placeholder="User name" required><br>
+    <b><span>Enter Last name : </span></b><br>
+    <input type="text" name="last_name" placeholder="Last name" required><br>
+    <b><span>Enter Email : </span></b><br>
+    <input type="email" name="email" placeholder="Email" required><br>
+    <b><span>Enter password : </span></b><br>
+    <input type="password" name="password" placeholder="Password" required><br>
+    <b><span>Gender : </span></b><br>
+    <input type="radio" name="gender" value="male" required >Male
+    <input type="radio" name="gender" value="female" required>Female<br>
+    <input type="submit" name="sbt" value="Signup" id="btn_all"><br><br>
+    
+</form>
+</div>
+
+{% if message %}
+<div class="col-md-6" id="sub_div">
+    
+<h3 >{{ message }}</h3>
+{% if data_ver %}
+{{ otp }}
+<div >
+
+<br>
+<form method="POST" >
+    {% csrf_token %}
+    <input type="text" name="otp_data" required placeholder="Enter otp">
+    <input type="submit" name="sbt" value='send' id="btn_all">
+</form><br>
+
+</div>
+{% endif %}
+{% endif %}
+
+</div>
+
+</div>
+{% endblock %}

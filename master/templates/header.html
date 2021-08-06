@@ -1,0 +1,141 @@
+
+<html>
+    {% load static %}
+    <style>
+        .leftside{
+            background: rgba(11, 67, 104, 0.699);
+            text-align: center;
+        }
+        @media screen and (min-width:768px) {
+            .responsive {
+             width: 100%;
+             max-width: 400px;
+                height: auto;
+                }
+            
+            
+            .leftside{
+                height: 7vh;
+            }
+            #div{
+            height: auto;
+        }
+        #sub_div{
+            background: rgba(7, 69, 184, 0.801);
+        }
+        #img_upload{
+            width: 7cm;
+            height: 7cm;
+            
+                    }
+            
+            
+        }
+        #img_disc{
+            
+            overflow: hidden;
+            color: rgb(15, 7, 7);
+            text-align: center;
+            background: rgba(30, 143, 255, 0.459);
+            position: absolute;
+            top: 70%;
+            left: 30%;
+            right: 30%;
+            
+            width: 250px;
+            max-width:200px;
+            word-wrap:break-word;
+        }
+        #title{
+                background: rgba(223, 122, 6, 0.678);
+            }
+        .rightside{
+            background: rgba(12, 11, 14, 0.514);
+            text-align: right;
+            color: cornsilk;
+            height: 7vh;
+        }
+        #profile{
+            text-align: right;
+        }
+        #div{
+            background: rgba(194, 114, 23, 0.479);
+            text-align: center;
+        }
+        #btn{
+        background-color: sandybrown;
+        margin-left: 1cm;
+            }
+            #btn_all{
+        background-color: rgb(219, 132, 55);
+        
+            }
+        #footer{
+            background: rgba(12, 11, 14, 0.514);
+            height: 4cm;
+            
+        }
+        #footer2{
+            background: rgba(11, 67, 104, 0.699);
+        }
+        #body{
+            
+            background: white;
+        }
+    </style>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+<body id="body">
+    <div class="row no-gutters " >
+        <div class="col-md-6">
+            <div class="leftside"> <span id="title" > blogging  </span></div>
+            
+        </div>
+        <div class="col-md-6">
+            <div class="rightside" > 
+            </div>
+            
+        </div>
+
+
+    
+    </div>
+    <div class="row ">
+        <div class="col-md-9">
+            <h1 id='title'>Blog Assignment </h1>
+        </div>
+        <div class="col-md-3" id="profile">
+            {% if data %}
+                welcome {{ data }} <br> 
+                <a href="logout" id='title'> <b> Logout </b> </a>
+                {% endif %} 
+                {% if fulldetails %}
+                welcome {{ fulldetails.email.user_name }}<br>
+                {{ fulldetails.email }} <br>
+                {{ fulldetails.phone }}  <br>
+                <a href="logout" id='title'> <b> Logout </b> </a>
+                
+                {% endif %} 
+                
+                
+        </div>
+    </div>
+{% block content %}
+{% endblock %}
+
+<br>
+</body>
+<div class="row no-gutters">
+
+    <div class="col-md-8 leftside " id="footer" style="max-width:1100px; word-wrap:break-word; " > <h3><u><i> Privacy Policy </i></u></h3>
+        When you post an item for sale using our Services, you may choose to make certain personal information visible to other  users.Please note, any information you provide to other users can always be shared by them with others so please exercise discretion in this respect.<br><br></div>
+    <div class="col-md-4 " id="footer2" >
+        <div class="row rightside" style="margin-left: 0.3ch; margin-top: 5%;"> <h5  style="text-align: right; margin-left: 3cm;"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+            <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/>
+          </svg></h5>ukaillatif@gmail.com<br>  </div>
+        <div class="row rightside" style="margin-left: 0.3ch;background: rgba(175, 51, 13, 0.781);"><h5  style="text-align: right; margin-left: 3cm;"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+            <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+          </svg> +91 9797100811</h5></div>
+    </div>
+    </div>

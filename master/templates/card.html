@@ -1,0 +1,31 @@
+{% extends "header.html"%}
+{% block content %}    
+    <a href="dash">Home </a> |   <a href="">Make Business Card </a> |   <a href="imagepost">Upload Post </a><br>
+    
+<div class="row">
+    <div class="col-md-6">
+    <span><i><b>BUSINESS CARD</b></i> </span>
+    <form method="POST">
+        {% csrf_token %}
+    <input type="text" name="name" required placeholder="Enter Business Name"><br><br>
+    <input type="number" name="phone" required placeholder="Enetr Phone no" maxlength="10"><br>
+    <input type="submit" name="sbt" value="create/update card" id='btn'>
+
+
+
+</form>
+</div>
+{% if fulldetails %}
+<div class="col-md-6 " >
+    <h6 id="title">Business Card Details</h6>
+    <table border="5" align="left" id='title'>
+        
+    <tr><td>business name : {{ fulldetails.name }}</td></tr>
+    <tr><td>email : {{ fulldetails.email }}</td></tr>
+    <tr><td>phone : {{ fulldetails.phone }}</td></tr>
+    <tr><td>user name : {{ fulldetails.email.user_name}}</td></tr>
+        </table>
+</div>
+{% endif %}
+</div>
+{% endblock %}

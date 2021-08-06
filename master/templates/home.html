@@ -1,0 +1,22 @@
+
+{% extends "header.html" %}
+{% block content %}
+<div style="text-align: center;">
+<a href="#">Home </a> |   <a href="login">Signin </a> | <a href="registeration">SignUp </a>   
+</div>
+<br>
+
+<div class="row">
+        {% for item in DATA %}
+        <div class="col-md-4" style=" text-align: center;">
+        <a href="homeinner/{{ item.id }}"><img src= "{{ item.images.url }}" id='img_upload' class="responsive"  width="600" height="400"/></a><br>
+        {{ item.timestamp }}<br>
+        
+    </div>
+        {% endfor %}
+
+    
+</div>
+
+{% endblock %}
+

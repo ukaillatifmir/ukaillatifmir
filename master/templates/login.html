@@ -1,0 +1,29 @@
+{% extends "header.html" %}
+
+{% block content %}
+
+<div style="text-align: center;"><a href="/ "> Home </a>   | <a href="login"> Signin </a> | <a href="registeration"> SignUp </a></div><br>
+<div id="div">
+   
+    
+        <form method="POST">
+            {% csrf_token %}
+    
+        
+        <b><span>Enter Email : </span></b><br>
+        <input type="email" name="email" placeholder="Email" required><br>
+        <b><span>Enter password : </span></b><br>
+        <input type="password" name="password" placeholder="Password" required><br>
+       
+        <input type="submit" name="sbt" value="Sign in" id="btn_all"><br><br>
+        
+    </form>
+    <h3 style="color: darkgreen;">{{ message }}</h3>
+    <h3>{{ data }}</h3>
+    </div>
+    
+    {% endblock %}
+
+
+
+   

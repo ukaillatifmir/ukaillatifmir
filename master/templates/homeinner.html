@@ -1,0 +1,17 @@
+{% extends "header.html"%}
+
+{% block content  %}
+<div class="row" >
+    {% for itm in inner_details %}
+    <div class="col-md-3"><a href="{{ itm.all_images.url }}"> <img src="{{ itm.all_images.url }}" alt="" id='img_upload' class="responsive"  width="600" height="400"></a><br><br></div>
+    {% endfor%}
+</div><br><br>
+{{ disc.timestamp }}
+<h1 style="margin-left: 1ch;"><i> Description </i></h1>
+    <div class="row" style="margin-left: 1ch;" >
+        
+    <div class="col-md-12" style="max-width:1100px; word-wrap:break-word; background: rgba(223, 122, 6, 0.678); color: rgb(8, 8, 8);" class="responsive" ><h5> {{ disc.discription }}</h5></div><br><br>
+    </div>
+
+
+{% endblock%}
